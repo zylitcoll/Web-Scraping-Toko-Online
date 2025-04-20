@@ -1,0 +1,4 @@
+chromedriver/
+selenium_profile/
+tokopedia_scraping_env/
+*.csv
