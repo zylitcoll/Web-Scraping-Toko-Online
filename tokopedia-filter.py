@@ -26,10 +26,11 @@ if url:
         )
 
         if len(checkboxes) >= 5:
-            checkboxes[1].click()  # checkbox ke-3
-            checkboxes[2].click()  # checkbox ke-3
-            checkboxes[3].click()  # checkbox ke-3
-            checkboxes[4].click()  # checkbox ke-3
+            # checkboxes[0].click()  # bintang 5
+            # checkboxes[1].click()  # bintang 4
+            checkboxes[2].click()  # bintang 3
+            checkboxes[3].click()  # bintang 2
+            checkboxes[4].click()  # bintang 1
 
             print("Checkbox ke-3 diklik")
         else:
@@ -42,7 +43,7 @@ if url:
 
     # SCRAPING DIMULAI
     data = []
-    for i in range(0, 3):  # Loop 3 halaman
+    for i in range(0, 19):  # Loop 3 halaman
         soup = BeautifulSoup(driver.page_source, "html.parser")
         containers = soup.findAll("article", attrs={"class": "css-1pr2lii"})
 
@@ -67,4 +68,4 @@ if url:
 
     print(data)
     df = pd.DataFrame(data, columns=["Ulasan"])
-    df.to_csv("B4-B1.csv", index=False)
+    df.to_csv("tokoB3-1.csv", index=False)
